@@ -1,6 +1,6 @@
 # Search Link in Markdown
 
-Adds a context menu item to Markdown files, to convert selected text into a search link in Markdown format.
+Adds a context menu item to Markdown/text files, to convert selected text into a search link in Markdown format.
 
 ## Keyboard Shortcuts
 

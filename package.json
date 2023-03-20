@@ -1,8 +1,8 @@
 {
 	"name": "search-link-md",
 	"displayName": "Search Link in Markdown",
-	"description": "Add search links to Markdown files",
-	"version": "0.0.1",
+	"description": "Add search links in Markdown format",
+	"version": "0.0.2",
 	"publisher": "remls",
     "license": "MIT",
     "repository": {
@@ -16,7 +16,8 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onLanguage:markdown"
+        "onLanguage:markdown",
+        "onLanguage:plaintext"
 	],
     "icon": "icon.png",
 	"main": "./out/extension",
@@ -31,8 +32,15 @@
 			{
 				"key": "alt+g",
                 "mac": "alt+g",
-				"command": "searchLinkInMarkdown.insertSearchLink"
-			}
+				"command": "searchLinkInMarkdown.insertSearchLink",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+			},
+            {
+                "key": "alt+g",
+                "mac": "alt+g",
+                "command": "searchLinkInMarkdown.insertSearchLink",
+                "when": "editorTextFocus && editorLangId == 'plaintext'"
+            }
 		],
         "menus": {
             "editor/context": [
@@ -40,6 +48,11 @@
                     "command": "searchLinkInMarkdown.insertSearchLink",
                     "group": "1_modification@9",
                     "when": "editorTextFocus && editorLangId == 'markdown'"
+                },
+                {
+                    "command": "searchLinkInMarkdown.insertSearchLink",
+                    "group": "1_modification@9",
+                    "when": "editorTextFocus && editorLangId == 'plaintext'"
                 }
             ]
         },
