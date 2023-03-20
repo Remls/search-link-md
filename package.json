@@ -1,0 +1,87 @@
+{
+	"name": "search-link-md",
+	"displayName": "Search Link in Markdown",
+	"description": "Add search links to Markdown files",
+	"version": "0.0.1",
+	"publisher": "remls",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Remls/search-link-md.git"
+    },
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onLanguage:markdown"
+	],
+    "icon": "icon.png",
+	"main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "searchLinkInMarkdown.insertSearchLink",
+                "title": "Insert Search Link"
+            }
+        ],
+		"keybindings": [
+			{
+				"key": "alt+g",
+                "mac": "alt+g",
+				"command": "searchLinkInMarkdown.insertSearchLink"
+			}
+		],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "searchLinkInMarkdown.insertSearchLink",
+                    "group": "1_modification@9",
+                    "when": "editorTextFocus && editorLangId == 'markdown'"
+                }
+            ]
+        },
+        "configuration": [
+            {
+                "title": "Search Link in Markdown",
+                "properties": {
+                    "searchLinkInMarkdown.searchEngine": {
+                        "type": "string",
+                        "enum": [
+                            "google",
+                            "bing",
+                            "yahoo",
+                            "duckduckgo",
+                            "wikipedia"
+                        ],
+                        "enumDescriptions": [
+                            "Google",
+                            "Bing",
+                            "Yahoo",
+                            "DuckDuckGo",
+                            "Wikipedia"
+                        ],
+                        "default": "google",
+                        "description": "Search engine to use when inserting a search link"
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.7",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^5.42.0",
+        "@typescript-eslint/parser": "^5.42.0",
+        "eslint": "^8.26.0",
+        "typescript": "^4.9.4"
+    }
+}
