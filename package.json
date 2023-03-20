@@ -2,7 +2,7 @@
 	"name": "search-link-md",
 	"displayName": "Search Link in Markdown",
 	"description": "Add search links in Markdown format",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "remls",
     "license": "MIT",
     "repository": {

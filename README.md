@@ -8,13 +8,6 @@ Adds a context menu item to Markdown/text files, to convert selected text into a
 | --- | --- |
 | Insert search link | `Alt + g`<br>`⌥ + g` |
 
-## Configuration
-
-| Description | Default |
-| --- | --- |
-| Search engine to use when inserting a search link | Google |
-
-
 ## Config
 
 | Name | Description | Default |
